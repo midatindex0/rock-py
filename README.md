@@ -6,6 +6,7 @@ A [Rock API](https://github.com/Mr-Conos/Rock-API) wrapper written in python tha
 
 ```sh
 git clone https://github.com/lonely-code-cube/rock-py
+cd rock-py
 python setup.py install
 ```
 
