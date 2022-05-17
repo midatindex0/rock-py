@@ -40,7 +40,7 @@ class AsyncRock:
         return await self._session.get_random_rock()
 
     async def get_top_rock(self) -> RockData:
-        """Gets a rock with 5 rating.
+        """Gets a rock with a 5 rating.
         Returns
         -------
         RockData
