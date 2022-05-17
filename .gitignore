@@ -2,3 +2,4 @@ env/
 build/
 dist/
 rock.egg-info/
+**/__pycache__/
