@@ -1,0 +1,2 @@
+aiohttp # For async requests
+requests # For sync requests
