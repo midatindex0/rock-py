@@ -29,7 +29,7 @@ class RockSession(aiohttp.ClientSession):
         elif resp.status == 404:
             raise Rock404(resp, "Not found")
         else:
-            raise RockUnknown(resp, (await resp.json()).get('message', '')+" [Status code: "+str(resp.status_code)+']')
+            raise RockUnknown(resp, (await resp.json()).get('message', '')+" [Status code: "+str(resp.status)+']')
 
 
     async def _patch(self, url, data: dict):
@@ -39,7 +39,7 @@ class RockSession(aiohttp.ClientSession):
         elif resp.status == 404:
             raise Rock404(resp, "Not found")
         else:
-            raise RockUnknown(resp, (await resp.json()).get('message', '')+" [Status code: "+str(resp.status_code)+']')
+            raise RockUnknown(resp, (await resp.json()).get('message', '')+" [Status code: "+str(resp.status)+']')
 
     def _pack(self, resp: dict) -> RockData:
         return RockData(
