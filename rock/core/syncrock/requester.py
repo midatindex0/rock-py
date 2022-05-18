@@ -22,18 +22,18 @@ class RockSession(requests.Session):
         if resp.status_code == 200:
             return resp
         elif resp.status_code == 404:
-            raise Rock404("Not found")
+            raise Rock404(resp, "Not found")
         else:
-            raise RockUnknown("Unknown error status code: "+str(resp.status_code))
+            raise RockUnknown(resp, resp.json().get('message', '')+" [Status code: "+str(resp.status_code)+']')
 
     def _patch(self, url, data: dict):
         resp = super().patch(url=url, data=data)
         if resp.status_code == 200:
             return resp
         elif resp.status_code == 404:
-            raise Rock404("Not found")
+            raise Rock404(resp, "Not found")
         else:
-            raise RockUnknown("Unknown error status code: "+str(resp.status_code))
+            raise RockUnknown(resp, resp.json().get('message', '')+" [Status code: "+str(resp.status_code)+']')
 
 
     def _pack(self, resp: dict) -> RockData:
