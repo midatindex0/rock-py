@@ -11,7 +11,7 @@ class RockSession(aiohttp.ClientSession):
     """
 
     def __init__(self, *args, **kwargs):
-        self.BASE_URL = "https://mrconos.pythonanywhere.com/"
+        self.BASE_URL = "https://rockapi.apiworks.tech/"
         self._endpoints = {
             "rock": "rock/",
             "random": "rock/random",

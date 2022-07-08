@@ -7,7 +7,7 @@ from ..errors import Rock404, RockUnknown
 
 class RockSession(requests.Session):
     def __init__(self, *args, **kwargs) -> None:
-        self.BASE_URL = "https://mrconos.pythonanywhere.com/"
+        self.BASE_URL = "https://rockapi.apiworks.tech/"
         self._endpoints = {
             "rock": "rock/",
             "random": "rock/random",
